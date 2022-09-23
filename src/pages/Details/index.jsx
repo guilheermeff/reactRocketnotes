@@ -1,6 +1,6 @@
 import { Container } from './styles.js';
 import { Header } from '../../components/Header/index.jsx';
-import { Section } from '../../components/Section/index.jsx';
+import { Section, Children } from '../../components/Section/index.jsx';
 import { Button } from '../../components/Button/index.jsx';
 
 export function Details() {
@@ -11,9 +11,10 @@ export function Details() {
 
       <Section title="links úteis">
         <ul>
-          <li>Ítem 1</li>
-          <li>Ítem 2</li>
-          <li>Ítem 3</li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+
+          // CONTINUAR AQUI!!
         </ul>
       </Section>
 
