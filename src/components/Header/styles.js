@@ -18,3 +18,7 @@ export const Container = styled.header`
 
   background-color: red;
 `;
+
+export const Profile = styled.div`
+  
+`;
