@@ -8,7 +8,7 @@ export const Container = styled.div`
   grid-template-rows: 105px auto;
   grid-template-areas:
     "header"
-    "content"
+    "content";
 
   > main {
     grid-area: content;
@@ -39,4 +39,26 @@ export const Links = styled.ul`
 export const Content = styled.div`
   max-width: 550px;
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  > button:first-child {
+    align-self: end;
+  }
+
+  > h1 {
+    font-size: 36px;
+    line-height: 47px;
+    font-weight: 500;
+    
+    margin: 64px 0 16px;
+  }
+
+  > p {
+    font-size: 16px;
+    line-height: 19px;
+
+    text-align: justify;
+  }
 `;

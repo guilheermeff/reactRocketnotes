@@ -16,6 +16,21 @@ export function Details() {
 
           <ButtonText title="Excluir nota" />
 
+          <h1>
+            Introdução ao React
+          </h1>
+
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Neque exercitationem necessitatibus architecto corporis aliquam 
+            inventore doloribus. Consectetur nobis fugiat hic maiores sunt 
+            quis atque delectus, facere, ratione eligendi a illum.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Expedita cupiditate ex ad ipsum quam iure perferendis amet maxime officiis. 
+            In ab beatae sed minus molestiae consequatur aperiam, at culpa officia!
+          </p>
+
           <Section title="Links Úteis">
             <Links>
               <li><a href="#">https://app.rocketseat.com.br/users</a></li>
