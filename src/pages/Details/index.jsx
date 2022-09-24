@@ -1,4 +1,4 @@
-import { Container, Links } from './styles.js';
+import { Container, Links, Content } from './styles.js';
 import { Header } from '../../components/Header/index.jsx';
 import { ButtonText } from '../../components/ButtonText/index.jsx';
 import { Section } from '../../components/Section/index.jsx';
@@ -11,21 +11,27 @@ export function Details() {
     <Container>
       <Header/>
 
-      <ButtonText title="Excluir nota" />
+      <main>
+        <Content>
 
-      <Section title="Links Úteis">
-        <Links>
-          <li><a href="#">https://app.rocketseat.com.br/users</a></li>
-          <li><a href="#">https://app.rocketseat.com.br/users</a></li>
-        </Links>
-      </Section>
+          <ButtonText title="Excluir nota" />
 
-      <Section title="Marcadores">
-        <Tag title="express" />
-        <Tag title="nodejs" />
-      </Section>
+          <Section title="Links Úteis">
+            <Links>
+              <li><a href="#">https://app.rocketseat.com.br/users</a></li>
+              <li><a href="#">https://app.rocketseat.com.br/users</a></li>
+            </Links>
+          </Section>
 
-      <Button title="Voltar" />
+          <Section title="Marcadores">
+            <Tag title="express" />
+            <Tag title="nodejs" />
+          </Section>
+
+          <Button title="Voltar" />
+
+        </Content>
+      </main>
     </Container>
   )
 }
