@@ -10,3 +10,21 @@ export const Container = styled.div`
     "header"
     "content"
 `;
+
+export const Links = styled.ul`
+  list-style: none;
+
+  > li {
+    margin-bottom: 12px;
+
+    a {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+
+      font-weight: 400;
+
+      font-size: 16px;
+      line-height: 19px;
+      line-height: 100%;
+    }
+  }
+`;

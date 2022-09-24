@@ -1,6 +1,6 @@
-import { Container } from './styles.js';
+import { Container, Links } from './styles.js';
 import { Header } from '../../components/Header/index.jsx';
-import { Section, Children } from '../../components/Section/index.jsx';
+import { Section } from '../../components/Section/index.jsx';
 import { Button } from '../../components/Button/index.jsx';
 
 export function Details() {
@@ -9,13 +9,11 @@ export function Details() {
     <Container>
       <Header/>
 
-      <Section title="links úteis">
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-
-          // CONTINUAR AQUI!!
-        </ul>
+      <Section title="Links Úteis">
+        <Links>
+          <li><a href="#">https://app.rocketseat.com.br/users</a></li>
+          <li><a href="#">https://app.rocketseat.com.br/users</a></li>
+        </Links>
       </Section>
 
       <Button title="Voltar"/>
