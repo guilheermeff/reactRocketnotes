@@ -10,5 +10,5 @@ export const Container = styled.button`
 
   width: fit-content;
 
-  color: ${({ theme }) => theme.COLORS.ORANGE};
+  color: ${({ theme, isActive }) => isActive ? theme.COLORS.ORANGE : theme.COLORS.GRAY_100};
 `;
