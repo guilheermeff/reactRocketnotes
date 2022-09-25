@@ -4,6 +4,7 @@ import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Section } from '../../components/Section';
+import { Note } from '../../components/Note';
 import { FiPlus } from 'react-icons/fi';
 
 export function Home() {
@@ -27,9 +28,15 @@ export function Home() {
       </Search>
 
       <Content>
-        <Section title="Minhas notas" />
-
-        
+        <Section title="Minhas notas">
+          <Note data = {{
+            title: 'React',
+            tags: [
+              { id: '1', name: 'reactjs' },
+              { id: '2', name: 'nodejs' }
+            ]
+          }} />
+        </Section>
       </Content>
 
       <NewNote>
