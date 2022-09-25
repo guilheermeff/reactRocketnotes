@@ -9,6 +9,7 @@ export const Container = styled.button`
 
   padding: 22px;
   margin-bottom: 16px;
+  text-align: left;
 
   > h1 {
     flex: 1;
@@ -16,5 +17,7 @@ export const Container = styled.button`
     font-weight: 700;
     font-size: 24px;
     color: ${({ theme }) => theme.COLORS.WHITE};
+
+    margin-bottom: 24px;
   }
 `;
