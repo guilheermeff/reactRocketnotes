@@ -1,5 +1,5 @@
 import { FiArrowLeft, FiUser, FiMail, FiLock } from 'react-icons/fi';
-import { Container } from './styles';
+import { Container, Form } from './styles';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 
@@ -11,31 +11,33 @@ export function Profile() {
         <FiArrowLeft />
       </header>
 
-      <Input
-        icon={FiUser}
-        placeholder="Nome"
-        type="text"
-      />
+      <Form>
+        <Input
+          icon={FiUser}
+          placeholder="Nome"
+          type="text"
+        />
 
-      <Input
-        icon={FiMail}
-        placeholder="E-mail"
-        type="text"
-      />
+        <Input
+          icon={FiMail}
+          placeholder="E-mail"
+          type="text"
+        />
 
-      <Input
-        icon={FiLock}
-        placeholder="Senha atual"
-        type="password"
-      />
+        <Input
+          icon={FiLock}
+          placeholder="Senha atual"
+          type="password"
+        />
 
-      <Input
-        icon={FiLock}
-        placeholder="Nova senha"
-        type="password"
-      />
+        <Input
+          icon={FiLock}
+          placeholder="Nova senha"
+          type="password"
+        />
 
-      <Button title="Salvar"/>
+        <Button title="Salvar"/>
+      </Form>
     </Container>
   )
 }

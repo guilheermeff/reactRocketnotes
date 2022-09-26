@@ -12,10 +12,24 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
     padding: 64px 160px;
+  }
+`;
+
+export const Form = styled.form`
+  max-width: 340px;
+
+  margin: 52px auto;
+
+  > div {
 
     svg {
-      font-size: 16px;
-      height: 16px;
+      margin-left: 18px;
     }
+
+    input {
+      background-color: transparent;
+
+      padding: 18px;
+    } 
   }
 `;
