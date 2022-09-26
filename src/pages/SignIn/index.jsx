@@ -1,13 +1,13 @@
 import { Input } from "../../components/Input"; 
 import { Button } from "../../components/Button";
 
-import { Container } from "./styles";
+import { Container, Background, Form } from "./styles";
 import { FiLock, FiMail } from 'react-icons/fi';
 
 export function SignIn() {
   return(
     <Container>
-      <form>
+      <Form>
         <h1>Rocket Notes</h1>
         <p>Aplicação para gerenciar e salvar seus links úteis.</p>
 
@@ -31,7 +31,9 @@ export function SignIn() {
         />
 
         <a href="#">Criar conta</a>
-      </form>
+      </Form>
+
+      <Background />
     </Container>
   )
 }
