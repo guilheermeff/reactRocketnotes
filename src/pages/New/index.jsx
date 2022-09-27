@@ -7,6 +7,8 @@ export function New() {
       
       <Header />
 
+       
+
     </Container>
   )
 }
