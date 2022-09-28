@@ -18,7 +18,7 @@ export function New() {
           </header>
           <Input placeholder="Título"/>
           
-          <TextArea />
+          <TextArea placeholder="Observações"/>
 
           <Button title="Salvar" />
         </Form>

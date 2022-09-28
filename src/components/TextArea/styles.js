@@ -12,8 +12,8 @@ export const Container = styled.div`
 
   > textarea {
     width: 100%;
-    
-    padding: 12px;
+    height: 150px;
+    padding: 20px;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
     background-color: transparent;
