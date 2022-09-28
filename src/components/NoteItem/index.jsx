@@ -6,10 +6,17 @@ export function NoteItem({ isNew, value, onClick, ...rest}) {
     <Container isNew={isNew}>
       <input 
         type="text"
-        // CONTINUAR DAQUI 28/09!!
+        value={value}
+        readOnly={!isNew}
+        {...rest}
       />
 
-      <button />
+      <button 
+        type="button"
+        onClick={onClick}
+      >
+        {isNew ? <FiPlus /> : <FiX />}
+      </button>
     </Container>
   )
 }
