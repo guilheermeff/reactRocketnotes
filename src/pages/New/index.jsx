@@ -2,6 +2,7 @@ import { Container, Form } from './styles';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { TextArea } from '../../components/TextArea';
+import { Section } from '../../components/Section';
 import { Button } from '../../components/Button';
 
 export function New() {
@@ -19,6 +20,10 @@ export function New() {
           <Input placeholder="Título"/>
           
           <TextArea placeholder="Observações"/>
+
+          <Section title="Links úteis">
+            
+          </Section>
 
           <Button title="Salvar" />
         </Form>
