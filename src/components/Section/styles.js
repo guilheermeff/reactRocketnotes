@@ -3,11 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.section`
   margin: 45px 0 28px;
 
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: ${ ({ theme }) => theme.COLORS.GRAY_300 };
   > h2 {
-
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: ${ ({ theme }) => theme.COLORS.GRAY_300 };
 
     padding-bottom: 16px;
     margin-bottom: 24px;

@@ -24,6 +24,14 @@ export function New() {
 
           <Section title="Links úteis">
             <NoteItem value="https://www.globo.com.br/" />
+            <NoteItem placeholder="Novo link" isNew />
+          </Section>
+
+          <Section title="Marcadores">
+            <div className='tags'>
+              <NoteItem value="React" />
+              <NoteItem placeholder="Novo marcador" isNew />
+            </div>
           </Section>
 
           <Button title="Salvar" />
