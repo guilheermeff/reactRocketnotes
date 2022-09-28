@@ -1,6 +1,7 @@
 import { Container, Form } from './styles';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { TextArea } from '../../components/TextArea';
 import { Button } from '../../components/Button';
 
 export function New() {
@@ -17,6 +18,8 @@ export function New() {
           </header>
           <Input placeholder="Título"/>
           
+          <TextArea />
+
           <Button title="Salvar" />
         </Form>
         
