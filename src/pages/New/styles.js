@@ -11,3 +11,27 @@ export const Container = styled.div`
     "content"
   ;
 `;
+
+export const Form = styled.form`
+  margin: 64px auto;
+
+  max-width: 550px;
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 38px 0;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    a {
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+      font-size: 20px;
+    }
+  }
+`;
