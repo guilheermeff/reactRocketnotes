@@ -21,6 +21,8 @@ export const Container = styled.div`
 
     font-size: 16px;
 
+    resize: none;
+
     &:placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
