@@ -12,6 +12,13 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
     padding: 64px 160px;
+
+		a {
+			svg {
+				font-size: 32px;
+				color: ${({ theme }) => theme.COLORS.WHITE};
+			}
+		}
   }
 `;
 

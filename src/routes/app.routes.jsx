@@ -9,7 +9,7 @@ import { New } from '../pages/New';
 export function AppRoutes() {
   return(
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/details' element={<Details />} />
       <Route path='/new' element={<New />} />

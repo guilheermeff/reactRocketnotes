@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -61,7 +62,7 @@ export const Content = styled.div`
   padding: 0 64px;
 `;
 
-export const NewNote = styled.button`
+export const NewNote = styled(Link)`
   grid-area: newnote;
 
   border: 0;

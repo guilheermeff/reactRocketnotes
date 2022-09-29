@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Input } from "../../components/Input"; 
 import { Button } from "../../components/Button";
 
@@ -30,7 +31,7 @@ export function SignIn() {
           type="submit"
         />
 
-        <a href="#">Criar conta</a>
+        <Link to="/signup">Criar conta</Link>
       </Form>
 
       <Background />

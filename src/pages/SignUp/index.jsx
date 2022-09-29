@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Input } from "../../components/Input"; 
 import { Button } from "../../components/Button";
 
@@ -39,7 +40,7 @@ export function SignUp() {
           type="submit"
         />
 
-        <a href="#">Voltar para o login</a>
+        <Link to="/signin">Voltar para o login</Link>
       </Form>
     </Container>
   )
