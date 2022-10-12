@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { Input } from "../../components/Input"; 
 import { Button } from "../../components/Button";
+import { useState } from "react";
 
 import { Container, Background, Form } from "./styles";
 import { FiLock, FiMail, FiUser } from 'react-icons/fi';
 
 export function SignUp() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return(
     <Container>
 
