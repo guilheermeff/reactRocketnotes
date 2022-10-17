@@ -1,5 +1,6 @@
-import { Link, useState } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Input } from "../../components/Input"; 
+import { useState } from "react";
 import { Button } from "../../components/Button";
 
 import { api } from "../../services/api";
@@ -13,24 +14,23 @@ export function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const api = useState();
 
   function handleSignUp() {
-    if(!user || !email || !password) {
-      return alert("Preencha os campos!");
+    if(!name || !email || !password) {
+      return alert("Preencha todos os campos!");
     }
 
     api.post("/users", { name, email, password })
-      .then(() => {
-        alert("Usuário cadastrado com sucesso!");
-        navigate("/");
-      }).catch(error => {
-        if(error.response) {
-          alert(error.response.data.message);
-        } else {
-          alert("Não foi possível cadastrar!");
-        }
-      })
+    .then(() => {
+      alert("Usuário cadastrado com sucesso!");
+    })
+    .catch(error => {
+      if(error.ersponse) {
+        alert(error.response.data.message);
+      } else {
+        alert("Não foi possível cadastrar!")
+      }
+    })    
   }
 
   return(
@@ -67,11 +67,10 @@ export function SignUp() {
 
         <Button 
           title="Cadastrar"
-          type="submit"
-          onclick={handleSignUp}
+          onClick={handleSignUp}
         />
 
-        <Link to="/signin">Voltar para o login</Link>
+        <Link to="/">Voltar para o login</Link>
       </Form>
     </Container>
   )

@@ -10,6 +10,7 @@ import { FiLock, FiMail } from 'react-icons/fi';
 export function SignIn() {
 
   const data = useAuth();
+  console.log(data);
 
   return(
     <Container>
