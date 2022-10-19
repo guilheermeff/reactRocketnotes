@@ -7,6 +7,8 @@ function AuthProvider({ children }) {
 
   async function signIn({ email, password }) {
 
+    console.log(email, password)
+
     try {
       const response = await api.post("/", { email, password });
 
