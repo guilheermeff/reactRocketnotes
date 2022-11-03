@@ -20,11 +20,18 @@ function AuthProvider({ children }) {
 
     } catch(error) {
       if(error.response) {
-        alert(error.response.message.data);
+        alert(error.response.message.data); // CONSERTAR MENSAGEM DE ERRO!
       } else {
         alert("Não foi possível conectar!")
       }
     }
+  }
+
+  async function signOut() {
+    localStorage.removeItem("@rocketnotes:token");
+    localStorage.removeItem("@rocketnotes:user");
+
+    setData({});
   }
 
   useEffect(() => {
@@ -43,7 +50,7 @@ function AuthProvider({ children }) {
   }, []);
 
   return(
-    <AuthContext.Provider value={{ signIn, user: data.user }} >
+    <AuthContext.Provider value={{ signIn, signOut ,user: data.user }} >
       {children}
     </AuthContext.Provider>
   )
