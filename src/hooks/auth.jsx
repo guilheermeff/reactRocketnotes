@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
 
     } catch(error) {
       if(error.response) {
-        alert(error.response.message.data); // CONSERTAR MENSAGEM DE ERRO!
+        alert(error.response.message.data); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
       } else {
         alert("Não foi possível conectar!")
       }
@@ -32,6 +32,23 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@rocketnotes:user");
 
     setData({});
+  }
+
+  async function updateProfile({ user }) {
+
+    try {
+
+      await api.put("/users", user);
+
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+      setData({ user, token: data.token });
+    } catch(error) {
+      if(error.response) {
+        alert(error.response.message.data); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
+      } else {
+        alert("Não foi possível atualizar!")
+      }
+    }
   }
 
   useEffect(() => {
@@ -50,7 +67,7 @@ function AuthProvider({ children }) {
   }, []);
 
   return(
-    <AuthContext.Provider value={{ signIn, signOut ,user: data.user }} >
+    <AuthContext.Provider value={{ signIn, signOut ,user: data.user, updateProfile }} >
       {children}
     </AuthContext.Provider>
   )
