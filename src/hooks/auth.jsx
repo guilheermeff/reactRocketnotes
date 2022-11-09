@@ -19,12 +19,12 @@ function AuthProvider({ children }) {
       setData({ user, token })
 
     } catch(error) {
-      if(error.response) {
-        alert(error.response.message.data); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
-      } else {
-        alert("Não foi possível conectar!")
+        if(error.response) {
+          alert(error.response.data.message); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
+        } else {
+          alert("Não foi possível conectar!")
+        }
       }
-    }
   }
 
   async function signOut() {
