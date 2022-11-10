@@ -16,6 +16,18 @@ export function Profile() {
   const [passwordOld, setPasswordOld] = useState('');
   const [passwordNew, setPasswordNew] = useState('');
 
+  const [avatar, setAvatar] = useState(user.avatar);
+  const [avatarFile, setAvatarFile] = useState(null);
+
+  function handleChangeAvatar(event) {
+
+    const file = event.target.file[0];
+    setAvatarFile(file);
+
+    const imagePreview = URL.createObjectURL(file);
+    setAvatar(imagePreview);
+  }
+
   function handleUpdate() {
     const user = {
       name,
@@ -24,7 +36,7 @@ export function Profile() {
       old_password: passwordOld
     }
 
-    updateProfile({ user });
+    updateProfile({ user, avatarFile });
   }
 
   return(
@@ -37,11 +49,15 @@ export function Profile() {
       <Form>
 
         <Avatar>
-          <img src="https://github.com/guilheermeff.png" alt="Foto do usuário" />
+          <img src={avatar} alt="Foto do usuário" />
 
           <label>
             <FiCamera />
-            <input type="file" id="avatar" />
+            <input 
+              type="file"
+              id="avatar" 
+              onChange={handleChangeAvatar}
+            />
           </label>
         </Avatar>
 
