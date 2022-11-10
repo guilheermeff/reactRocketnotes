@@ -9,7 +9,6 @@ function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     try {
       const response = await api.post("/sessions", { email, password });
-
       const { user, token } = response.data;
 
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
@@ -17,10 +16,9 @@ function AuthProvider({ children }) {
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setData({ user, token })
-
     } catch(error) {
         if(error.response) {
-          alert(error.response.data.message); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
+          alert(error.response.data.message);
         } else {
           alert("Não foi possível conectar!")
         }
@@ -34,17 +32,26 @@ function AuthProvider({ children }) {
     setData({});
   }
 
-  async function updateProfile({ user }) {
-
+  async function updateProfile({ user, avatarFile  }) {
     try {
+
+      if(avatarFile) {
+        const fileUploadForm = new FormData();
+        fileUploadForm.append("avatar", avatarFile);
+
+        const response = api.patch("/users/avatar", fileUploadForm);
+        user.avatar = response.data.avatar;
+      }
 
       await api.put("/users", user);
 
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
+
       setData({ user, token: data.token });
+      alert("Perfil Atualizado com sucesso!")
     } catch(error) {
       if(error.response) {
-        alert(error.response.message.data); /* NÃO ESTÁ RETORNANDO A MENSAGEM ################*/
+        alert(error.response.data.message);
       } else {
         alert("Não foi possível atualizar!")
       }
