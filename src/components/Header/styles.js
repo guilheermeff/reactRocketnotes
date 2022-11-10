@@ -47,12 +47,10 @@ export const Profile = styled(Link)`
 	}
 `;
 
-export const Logout = styled.button`
+export const Logout = styled(Link)`
   border: none;
   background: none;
 
-  > svg {
-    color: ${ ({ theme }) => theme.COLORS.ORANGE };
-    font-size: 36px;
-  }
+  color: ${ ({ theme }) => theme.COLORS.ORANGE };
+  font-size: 36px;
 `;

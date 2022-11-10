@@ -18,9 +18,9 @@ export function Header() {
         </div>
       </Profile>
 
-      <Logout onClick={signOut}>
-        <RiShutDownLine/>
-      </Logout>
+        <Logout to="/" onClick={signOut}>
+          <RiShutDownLine/>
+        </Logout>
     </Container>
   )
 }
