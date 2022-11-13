@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+
 import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 
 import { Header } from '../../components/Header';
@@ -8,6 +11,31 @@ import { Note } from '../../components/Note';
 import { FiPlus } from 'react-icons/fi';
 
 export function Home() {
+
+  const [tags, setTags] = useState([]);
+  const [tagSelected, setTagSelected] = useState([]);
+
+  function handleTagSelected(tagName) {
+
+    const alreadySelected = tagSelected.includes(tagName);
+
+    if(alreadySelected) {
+      const filteredTags = tagSelected.filter(tag => tag !== tagName);
+      setTagSelected(filteredTags);
+    } else {
+      setTagSelected(prevState => [...prevState, tagName])
+    } 
+  }
+
+  useEffect(() => {
+    async function getTags() {
+      const response = await api.get("/tags");
+      setTags(response.data);
+    }
+
+    getTags();
+  },[]);
+
   return(
     <Container>
       <Brand>
@@ -17,10 +45,18 @@ export function Home() {
       <Header />
 
       <Menu>
-        <li><ButtonText title="Todos" /></li>
-        <li><ButtonText title="Frontend" /></li>
-        <li><ButtonText title="Node" /></li>
-        <li><ButtonText title="React" /></li>
+        <li><ButtonText onClick={() => handleTagSelected("all")} title="Todos" isActive={tagSelected.length === 0}/></li>
+        {
+          tags && tags.map(tag => (
+            <li key={String(tag.id)}>
+              <ButtonText 
+                onClick={() => handleTagSelected(tag.name)} 
+                title={tag.name}
+                isActive={tagSelected.includes(tag.name)}
+              />
+            </li>
+          ))
+        }
       </Menu>
 
       <Search>
