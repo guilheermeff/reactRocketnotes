@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input"; 
 import { useState } from "react";
 import { Button } from "../../components/Button";
@@ -13,6 +14,8 @@ export function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
 
   function handleSignUp() {
@@ -30,7 +33,9 @@ export function SignUp() {
       } else {
         alert("Não foi possível cadastrar!")
       }
-    })    
+    });
+    
+    navigate("/");
   }
 
   return(
