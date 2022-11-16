@@ -14,6 +14,8 @@ export function Home() {
 
   const [tags, setTags] = useState([]);
   const [tagSelected, setTagSelected] = useState([]);
+  const [search, setSearch] = useState("");
+  const [notes, setNotes] = useState([]);
 
   function handleTagSelected(tagName) {
 
@@ -35,6 +37,15 @@ export function Home() {
 
     getTags();
   },[]);
+
+  useEffect(() => {
+    async function getNotes() {
+      const response = await api.get(`/notes?title=${search}&tags=${tagSelected}`);
+
+      setNotes(response.data)
+    }
+    getNotes();
+  },[tagSelected, search]);
 
   return(
     <Container>
@@ -60,18 +71,19 @@ export function Home() {
       </Menu>
 
       <Search>
-        <Input placeholder="Pesquisar pelo título"/>
+        <Input placeholder="Pesquisar pelo título" onChange={() => setSearch(e.target.value)} />
       </Search>
 
       <Content>
         <Section title="Minhas notas">
-          <Note data = {{
-            title: 'React',
-            tags: [
-              { id: '1', name: 'reactjs' },
-              { id: '2', name: 'nodejs' }
-            ]
-          }} />
+          {
+            notes.map(note => (
+              <Note 
+                key={String(note.id)}
+                data={note}
+              />
+            ))
+          }
         </Section>
       </Content>
 
